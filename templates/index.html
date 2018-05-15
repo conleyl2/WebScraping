@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars, the Second Best Planet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+<div clas="container">
+  <div class="jumbotron text-center">
+    <h1>Mars Facts!</h1>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape This Thing!</a></p>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <center><h3>Look at these Mars Stats!!!</h3></center>
+<br>
+<p>Check out the latest news from Mars: {{mars.newsTitle}}</p>
+<br>
+<center><p><h3>That sounds super interesting right??? Well here's its description:</h3></p></center>
+<br>
+<p>{{ mars.newsDesciption }}</p>
+<br>
+<center><h3>Here's Picture from the Mars Mission!!!</h3> </center>
+<center><img src = {{ mars.jplImage }}></img></center>
+<br>
+<center><h3>Check Out The Weather on Mars!!!</h3></center>
+<br>
+<p>{{ mars.weather }}</p>
+<br>
+<center><h3>Check Out These Mars Hemisphere Photos!!!</h3></center>
+<br>
+{% for items in mars.hemispherePhotos %}
+<center>{{ items.title }}</center>
+<img src = {{ items.img_url }}> </img>
+<br>
+{% endfor %}
+<br>
+<center><h3>Check Out These Mars Facts!!!</h3> </center>
+<br>
+{{ mars.dataTable }}
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
